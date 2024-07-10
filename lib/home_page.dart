@@ -1,14 +1,14 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:day_night_switcher/clouds_backs_widget.dart';
+import 'package:day_night_switcher/constants.dart';
 import 'package:day_night_switcher/rays_widget.dart';
 import 'package:day_night_switcher/sun_widget.dart';
-import 'package:day_night_switcher/clouds.dart';
+import 'package:day_night_switcher/clouds_widget.dart';
 import 'package:day_night_switcher/moon_widget.dart';
-import 'package:day_night_switcher/stars.dart';
+import 'package:day_night_switcher/stars_widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:sprung/sprung.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,8 +17,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
   bool _isDay = true;
 
   @override
@@ -28,11 +27,13 @@ class _HomePageState extends State<HomePage>
       body: SafeArea(
         child: SingleChildScrollView(
           child: Stack(
+            alignment: Alignment.topCenter,
             children: [
               Container(
                 width: double.infinity,
-                height: 700,
+                height: MediaQuery.of(context).size.height,
                 color: const Color(0xffdddddd),
+                // color: Colors.grey,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage>
                 children: [
                   const SizedBox(height: 100),
                   Transform.scale(
-                    scale: 1,
+                    scale: (MediaQuery.of(context).size.width * 0.8) / 369,
                     child: Container(
                       width: 369,
                       height: 145,
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage>
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(200),
                         child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 2000),
+                          duration: Constants.defaultAnimationDuration,
                           curve: Curves.easeInOut,
                           width: 369,
                           height: 145,
@@ -112,57 +113,36 @@ class _HomePageState extends State<HomePage>
                           child: Stack(
                             children: [
                               AnimatedPositioned(
-                                duration: const Duration(milliseconds: 2000),
-                                curve: Sprung.custom(
-                                    damping: 6,
-                                    stiffness: 16,
-                                    mass: 1.0,
-                                    velocity: 4),
+                                duration: Constants.defaultAnimationDuration,
+                                curve: Constants.sprung,
                                 left: _isDay ? -91 : 132,
                                 top: -92,
                                 child: const RaysWidget(),
                               ),
                               AnimatedPositioned(
-                                duration: const Duration(milliseconds: 2000),
-                                curve: Sprung.custom(
-                                    damping: 6,
-                                    stiffness: 16,
-                                    mass: 1.0,
-                                    velocity: 4),
+                                duration: Constants.defaultAnimationDuration,
+                                curve: Constants.sprung,
                                 left: -4,
                                 top: _isDay ? 1 : 168,
-                                child: const Opacity(
-                                    opacity: 0.5, child: CloudsBacksWidget()),
+                                child: CloudsBacksWidget(),
                               ),
                               AnimatedPositioned(
-                                duration: const Duration(milliseconds: 2000),
-                                curve: Sprung.custom(
-                                    damping: 6,
-                                    stiffness: 16,
-                                    mass: 1.0,
-                                    velocity: 4),
+                                duration: Constants.defaultAnimationDuration,
+                                curve: Constants.sprung,
                                 left: 10,
                                 top: _isDay ? 10 : 177,
                                 child: const CloudsWidget(),
                               ),
                               AnimatedPositioned(
-                                duration: const Duration(milliseconds: 2000),
-                                curve: Sprung.custom(
-                                    damping: 6,
-                                    stiffness: 16,
-                                    mass: 1.0,
-                                    velocity: 4),
+                                duration: Constants.defaultAnimationDuration,
+                                curve: Constants.sprung,
                                 left: 43,
                                 top: _isDay ? -144 : 23,
                                 child: const StarsWidget(),
                               ),
                               AnimatedPositioned(
-                                duration: const Duration(milliseconds: 2000),
-                                curve: Sprung.custom(
-                                    damping: 6,
-                                    stiffness: 16,
-                                    mass: 1.0,
-                                    velocity: 4),
+                                duration: Constants.defaultAnimationDuration,
+                                curve: Constants.sprung,
                                 left: _isDay ? 6 : 235,
                                 top: 8,
                                 child: GestureDetector(
@@ -178,7 +158,8 @@ class _HomePageState extends State<HomePage>
                                             ? Alignment.center
                                             : Alignment.centerLeft,
                                         width: _isDay ? 132 : 124,
-                                        duration: Duration(milliseconds: 2000),
+                                        duration:
+                                            Constants.defaultAnimationDuration,
                                         curve: Curves.easeInOut,
                                         height: 131,
                                         decoration: BoxDecoration(
@@ -192,13 +173,9 @@ class _HomePageState extends State<HomePage>
                                           children: [
                                             SunWidget(),
                                             AnimatedPositioned(
-                                              duration: const Duration(
-                                                  milliseconds: 2000),
-                                              curve: Sprung.custom(
-                                                  damping: 6,
-                                                  stiffness: 16,
-                                                  mass: 1.0,
-                                                  velocity: 4),
+                                              duration: Constants
+                                                  .defaultAnimationDuration,
+                                              curve: Constants.sprung,
                                               left: _isDay ? 161 : 0,
                                               top: 0,
                                               child: MoonWidget(),

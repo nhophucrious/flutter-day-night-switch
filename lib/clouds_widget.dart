@@ -1,3 +1,4 @@
+import 'package:day_night_switcher/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudsWidget extends StatelessWidget {
@@ -5,7 +6,7 @@ class CloudsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // a list to define star offsets and sizes
+    // a list to define clouds offsets and sizes
     const List<dynamic> offsetsAndSize = [
       {"offset": Offset(0, 96), "size": 82.0},
       {"offset": Offset(57, 119), "size": 82.0},
@@ -17,7 +18,7 @@ class CloudsWidget extends StatelessWidget {
       {"offset": Offset(287, 54), "size": 82.0},
       {"offset": Offset(304, 0), "size": 82.0},
     ];
-    return Container(
+    return SizedBox(
       width: 386,
       height: 201,
       child: Stack(
@@ -30,7 +31,7 @@ class CloudsWidget extends StatelessWidget {
                   width: offsetsAndSize[i]["size"],
                   height: offsetsAndSize[i]["size"],
                   decoration: const BoxDecoration(
-                    color: Colors.white,
+                    color: Constants.cloudColor,
                     shape: BoxShape.circle,
                   )),
             ),
