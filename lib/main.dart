@@ -1,4 +1,4 @@
-import 'package:day_night_switcher/home_page.dart';
+import 'package:day_night_switcher/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

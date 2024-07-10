@@ -10,6 +10,9 @@ class Constants {
 
   static const Duration defaultAnimationDuration = Duration(milliseconds: 2000);
 
+  // canvas background color (figma frame background color)
+  static const Color canvasColor = Color(0xFFDDDDDD);
+
   // Sun and moon colors
   static const Color sunColor = Color(0xFFFFD600);
   static const Color moonColor = Color(0xFFBFBFBF);
@@ -100,7 +103,7 @@ class Constants {
   static const double cloudsBacksOpacity = 0.5;
 
   // Sky colors
-  static const Color skyDay = Color(0xFF87CEEB);
+  static const Color skyDay = Color(0xFF2384BA);
   static const Color skyNight = Color(0xFF2F2F2F);
 
   // Star color
