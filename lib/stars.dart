@@ -5,8 +5,8 @@ class StarsWidget extends StatelessWidget {
   final double height;
   const StarsWidget({
     Key? key,
-    this.width = 142.0, // Default width
-    this.height = 93.0, // Default height
+    this.width = 142.0,
+    this.height = 93.0,
   }) : super(key: key);
 
   @override
@@ -34,7 +34,8 @@ class StarsWidget extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      decoration: BoxDecoration(color: Colors.amber[300]),
+      // decoration: BoxDecoration(color: Colors.amber[300]),
+      color: Colors.transparent,
       child: Stack(
         children: [
           for (var i = 0; i < offsetsAndSize.length; i++)

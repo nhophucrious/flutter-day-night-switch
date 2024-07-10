@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 
-class CloudsWidget extends StatelessWidget {
-  const CloudsWidget({super.key});
+class CloudsBacksWidget extends StatelessWidget {
+  const CloudsBacksWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     // a list to define star offsets and sizes
     const List<dynamic> offsetsAndSize = [
-      {"offset": Offset(0, 96), "size": 82.0},
-      {"offset": Offset(57, 119), "size": 82.0},
-      {"offset": Offset(97, 109), "size": 82.0},
-      {"offset": Offset(125, 112), "size": 82.0},
-      {"offset": Offset(174, 93), "size": 82.0},
-      {"offset": Offset(212, 102), "size": 82.0},
-      {"offset": Offset(250, 86), "size": 82.0},
-      {"offset": Offset(287, 54), "size": 82.0},
-      {"offset": Offset(304, 0), "size": 82.0},
+      {"offset": Offset(0, 98), "size": 82.0},
+      {"offset": Offset(58, 124), "size": 82.0},
+      {"offset": Offset(85, 103), "size": 82.0},
+      {"offset": Offset(128, 101), "size": 82.0},
+      {"offset": Offset(175, 82), "size": 82.0},
+      {"offset": Offset(213, 107), "size": 82.0},
+      {"offset": Offset(224, 76), "size": 82.0},
+      {"offset": Offset(260, 49), "size": 82.0},
+      {"offset": Offset(289, 0), "size": 88.0},
     ];
     return Container(
-      width: 386,
-      height: 201,
+      width: 377,
+      height: 206,
       child: Stack(
         children: [
           for (var i = 0; i < offsetsAndSize.length; i++)
@@ -29,7 +29,7 @@ class CloudsWidget extends StatelessWidget {
               child: Container(
                   width: offsetsAndSize[i]["size"],
                   height: offsetsAndSize[i]["size"],
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
                   )),
