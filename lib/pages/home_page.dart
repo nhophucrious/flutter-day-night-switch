@@ -1,13 +1,6 @@
-import 'package:day_night_switcher/widgets/clouds_backs_widget.dart';
 import 'package:day_night_switcher/utils/constants.dart';
 import 'package:day_night_switcher/widgets/day_night_switch_widget.dart';
-import 'package:day_night_switcher/widgets/rays_widget.dart';
-import 'package:day_night_switcher/widgets/sun_widget.dart';
-import 'package:day_night_switcher/widgets/clouds_widget.dart';
-import 'package:day_night_switcher/widgets/moon_widget.dart';
-import 'package:day_night_switcher/widgets/stars_widget.dart';
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
-import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
