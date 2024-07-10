@@ -1,12 +1,10 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
-import 'package:day_night_switcher/clouds_backs_widget.dart';
-import 'package:day_night_switcher/constants.dart';
-import 'package:day_night_switcher/rays_widget.dart';
-import 'package:day_night_switcher/sun_widget.dart';
-import 'package:day_night_switcher/clouds_widget.dart';
-import 'package:day_night_switcher/moon_widget.dart';
-import 'package:day_night_switcher/stars_widget.dart';
+import 'package:day_night_switcher/widgets/clouds_backs_widget.dart';
+import 'package:day_night_switcher/utils/constants.dart';
+import 'package:day_night_switcher/widgets/rays_widget.dart';
+import 'package:day_night_switcher/widgets/sun_widget.dart';
+import 'package:day_night_switcher/widgets/clouds_widget.dart';
+import 'package:day_night_switcher/widgets/moon_widget.dart';
+import 'package:day_night_switcher/widgets/stars_widget.dart';
 import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
@@ -124,7 +122,7 @@ class _HomePageState extends State<HomePage> {
                                 curve: Constants.sprung,
                                 left: -4,
                                 top: _isDay ? 1 : 168,
-                                child: CloudsBacksWidget(),
+                                child: const CloudsBacksWidget(),
                               ),
                               AnimatedPositioned(
                                 duration: Constants.defaultAnimationDuration,
@@ -163,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                                         curve: Curves.easeInOut,
                                         height: 131,
                                         decoration: BoxDecoration(
-                                          boxShadow: [], // MARK: - Explicit empty list to avoid inner shadow problem
+                                          boxShadow: const [], // MARK: - Explicit empty list to avoid inner shadow problem
                                           borderRadius:
                                               BorderRadius.circular(217),
                                         ),
@@ -171,14 +169,14 @@ class _HomePageState extends State<HomePage> {
                                           clipBehavior: Clip.none,
                                           alignment: Alignment.center,
                                           children: [
-                                            SunWidget(),
+                                            const SunWidget(),
                                             AnimatedPositioned(
                                               duration: Constants
                                                   .defaultAnimationDuration,
                                               curve: Constants.sprung,
                                               left: _isDay ? 161 : 0,
                                               top: 0,
-                                              child: MoonWidget(),
+                                              child: const MoonWidget(),
                                             ),
                                           ],
                                         ),

@@ -1,4 +1,4 @@
-import 'package:day_night_switcher/constants.dart';
+import 'package:day_night_switcher/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudsWidget extends StatelessWidget {

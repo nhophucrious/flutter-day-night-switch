@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:day_night_switcher/constants.dart';
+import 'package:day_night_switcher/utils/constants.dart';
 
 class RaysWidget extends StatelessWidget {
   const RaysWidget({super.key});
